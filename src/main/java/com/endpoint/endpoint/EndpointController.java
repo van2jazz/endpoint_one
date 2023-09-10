@@ -20,10 +20,9 @@ public class EndpointController {
         LocalDateTime currentTime = LocalDateTime.now(ZoneOffset.UTC);
         DayOfWeek currentDay = currentTime.getDayOfWeek();
         String formattedTime = currentTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"));
-//        DateTime formattedTime = DateTime.now( DateTimeZone.UTC );
 
         String githubFileUrl = "https://github.com";
-        String githubRepoUrl = "https://github.com";
+        String githubRepoUrl = "https://github.com/van2jazz/endpoint_one";
 
         return new Endpoint(
                 slack_name,
@@ -34,19 +33,6 @@ public class EndpointController {
                 githubRepoUrl,
                 200
         );
-
-
-//        Endpoint endpoint = new Endpoint();
-//        endpoint.setSlackName("slack_Name");
-//        endpoint.setCurrentDay(LocalDateTime.now().getDayOfWeek().toString());
-//        endpoint.setUtcTime(LocalDateTime.now(ZoneOffset.UTC).format(DateTimeFormatter.ISO_DATE_TIME));
-//        endpoint.setTrack(track);
-//        endpoint.setGithubFileUrl("https://github.com");
-//        endpoint.setGithubRepoUrl("https://github.com");
-//
-//        endpoint.setStatusCode(200);
-
-
     }
 
 
