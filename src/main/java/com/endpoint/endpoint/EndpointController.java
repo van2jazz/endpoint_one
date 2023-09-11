@@ -21,7 +21,7 @@ public class EndpointController {
         DayOfWeek currentDay = currentTime.getDayOfWeek();
         String formattedTime = currentTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"));
 
-        String githubFileUrl = "https://github.com";
+        String githubFileUrl = "https://spring-demo-projects.onrender.com/info?slack_name=dayo&track=backend";
         String githubRepoUrl = "https://github.com/van2jazz/endpoint_one";
 
         return new Endpoint(
