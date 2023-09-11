@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 @RestController
 public class EndpointController {
 
-    @GetMapping("/info")
+    @GetMapping("/api")
     public Endpoint EndpointInformation(
             @RequestParam String slack_name,
             @RequestParam String track)
