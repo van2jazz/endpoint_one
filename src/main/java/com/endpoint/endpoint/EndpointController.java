@@ -12,27 +12,27 @@ import java.time.format.DateTimeFormatter;
 @RestController
 public class EndpointController {
 
-    @GetMapping("/api")
-    public Endpoint EndpointInformation(
-            @RequestParam String slack_name,
-            @RequestParam String track)
-    {
-        LocalDateTime currentTime = LocalDateTime.now(ZoneOffset.UTC);
-        DayOfWeek currentDay = currentTime.getDayOfWeek();
-        String formattedTime = currentTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"));
+        @GetMapping
+        public Endpoint EndpointInformation(
+                @RequestParam String slack_name,
+                @RequestParam String track)
+        {
+            LocalDateTime currentTime = LocalDateTime.now(ZoneOffset.UTC);
+            DayOfWeek current_day = currentTime.getDayOfWeek();
+            String utc_time = currentTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'"));;
 
-        String githubFileUrl = "https://spring-demo-projects.onrender.com/info?slack_name=dayo&track=backend";
-        String githubRepoUrl = "https://github.com/van2jazz/endpoint_one";
+        String github_file_url = "https://spring-demo-project-vanjazz.onrender.com/api?slack_name=dayo&track=backend";
+        String github_repo_url = "https://github.com/van2jazz/endpoint_one";
 
         return new Endpoint(
-                slack_name,
-                currentDay.toString(),
-                formattedTime,
-                track,
-                githubFileUrl,
-                githubRepoUrl,
-                200
-        );
+                    slack_name,
+                    current_day.toString().substring(0,1) + current_day.toString().substring(1).toLowerCase(),
+                    utc_time,
+                    track,
+                    github_file_url,
+                    github_repo_url,
+                    200
+            );
     }
 
 
